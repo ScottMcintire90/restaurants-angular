@@ -11,6 +11,7 @@ import { Restaurant } from './restaurant.model';
     <label class="col-sm-6" for="restaurantSpecialty">Specialty</label><input class="col-sm-6 input-lg cd-form" [(ngModel)]="restaurant.specialty">
     <label class="col-sm-6" for="restaurantAddress">Address</label><input class="col-sm-6 input-lg cd-form" [(ngModel)]="restaurant.address">
     <label class="col-sm-6" for="restaurantCost">Cost</label><input class="col-sm-6 input-lg cd-form" [(ngModel)]="restaurant.cost">
+    
   </div>
   `
 })
