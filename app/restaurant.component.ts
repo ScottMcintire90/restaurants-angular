@@ -11,6 +11,7 @@ import { Restaurant } from './restaurant.model';
         <p><strong>Specialty: </strong>{{ restaurant.specialty }}</p>
         <p><strong>Address: </strong>{{ restaurant.address }}</p>
         <p><strong>Cost: </strong>{{ restaurant.cost }}</p>
+        <p><strong>Average Rating: </strong>{{restaurant.averageRating}}</p>
       </ul>
       <label for="rating">Rating</label>
       <select #newRating>
@@ -37,7 +38,16 @@ export class RestaurantComponent {
     }
   }
   addRating(rating: number): void {
+    var totalRatings: number = 0;
+    totalRatings = this.restaurant.averageRating * this.restaurant.ratings.length;
+    console.log("Total Ratings1", totalRatings);
+    totalRatings += Number(rating);
+    console.log("This average rating", this.restaurant.averageRating);
+    console.log("This restaurant ratings length", this.restaurant.ratings.length);
     this.restaurant.ratings.push(rating);
-    console.log(this.restaurant.ratings);
+    console.log("Total Ratings", totalRatings);
+    this.restaurant.averageRating = totalRatings/this.restaurant.ratings.length;
+
   }
+
 }
